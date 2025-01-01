@@ -1,3 +1,4 @@
+//practical 3
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
@@ -144,4 +145,4 @@ int main() {
     print_symbol_table();
 
     return 0;
-}
+}  
