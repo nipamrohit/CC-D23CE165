@@ -1,0 +1,34 @@
+START  
+
+FUNCTION is_valid_if_else(code):
+    DEFINE valid keywords: "if", "else", "elif"
+    SPLIT input code into lines
+    SET indentation stack to empty
+
+    FOR each line in code:
+        REMOVE leading spaces (get indentation level)
+        
+        IF line starts with "if", "elif", or "else":
+            CHECK if previous indentation is correct
+            ADD indentation to stack
+        
+        ELSE IF line is inside a block:
+            CHECK if indentation is consistent
+        
+        ELSE:
+            REMOVE indentation level from stack if necessary
+        
+    END FOR
+    
+    IF stack is empty:
+        RETURN "✅ Valid If-Else Syntax"
+    ELSE:
+        RETURN "❌ Error: Incorrect indentation or missing block"
+
+END FUNCTION  
+
+READ sample code as input
+CALL is_valid_if_else(sample code)
+PRINT result
+
+END  
